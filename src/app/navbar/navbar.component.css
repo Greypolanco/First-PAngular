@@ -1,0 +1,8 @@
+.navbar-custom {
+  background-color: #057bc0; /* Color morado oscuro */
+}
+
+.navbar-custom .nav-link {
+  color: white;
+  font-weight: bold;
+}
