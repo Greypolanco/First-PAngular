@@ -33,7 +33,7 @@
         </ng-template>
 
         <ng-template #botonInactivo>
-          <button [ngClass]="{'activo btn btn-danger': direccion.active}">Activar</button>
+          <button [ngClass]="{'btn btn-success': !direccion.active}">Activar</button>
         </ng-template>
       </td>
       <td>
