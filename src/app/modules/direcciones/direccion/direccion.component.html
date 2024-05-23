@@ -11,6 +11,7 @@
       <th>País</th>
       <th>Cliente</th>
       <th>Acciones</th>
+      <th>Localizar</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +35,11 @@
         <ng-template #botonInactivo>
           <button [ngClass]="{'activo btn btn-danger': direccion.active}">Activar</button>
         </ng-template>
+      </td>
+      <td>
+        <a class="btn btn-primary" 
+        [routerLink]="['/direccion', direccion.addressId]"
+        routerLinkActive="router-link-active">Ver</a>
       </td>
     </tr>
   </tbody>
