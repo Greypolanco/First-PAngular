@@ -12,7 +12,7 @@
             <th>Dirección</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="listaCliente | async as clientes">
         <tr *ngFor="let item of clientes">
             <td>{{item.clienteId}}</td>
             <td>{{item.name}}</td>

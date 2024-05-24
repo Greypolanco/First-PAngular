@@ -2,10 +2,10 @@
 <table class="table table-responsive">
   <thead>
       <tr>
-        <h1>Bienvenido {{cliente.name}}</h1>
+        <h1>Bienvenido </h1>
       </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="cliente | async as cliente">
     <tr>
       <td><a>Nombre: </a>{{cliente.name}}</td>
     </tr>
