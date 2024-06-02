@@ -8,7 +8,7 @@ export const routes: Routes = [
     loadChildren: () => import('./modules/clientes/clientes.module').then(m => m.ClientesModule)
   },
   {
-    path:'',
+    path:'direcciones',
     loadChildren: () => import('./modules/direcciones/direcciones.module').then(m => m.DireccionesModule)
   }
 ];
