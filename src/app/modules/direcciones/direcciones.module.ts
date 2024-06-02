@@ -5,16 +5,20 @@ import { DireccionesRoutingModule } from './direcciones-routing.module';
 import { DireccionComponent } from './direccion/direccion.component';
 import { DireccionesDatailComponent } from './direcciones-datail/direcciones-datail.component';
 import { DireccionesService } from '../../servicios/direcciones.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DireccionFormComponent } from './direccion-form/direccion-form.component';
 
 
 @NgModule({
   declarations: [
     DireccionComponent,
-    DireccionesDatailComponent
+    DireccionesDatailComponent,
+    DireccionFormComponent
   ],
   imports: [
     CommonModule,
-    DireccionesRoutingModule
+    DireccionesRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[
     DireccionesService
