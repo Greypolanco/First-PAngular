@@ -7,17 +7,21 @@ import { ClientesDatailComponent } from './clientes-datail/clientes-datail.compo
 import { ClienteDireccionComponent } from './cliente-direccion/cliente-direccion.component';
 import { ClientesService } from '../../servicios/clientes.service';
 import { DireccionesService } from '../../servicios/direcciones.service';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ClientesComponent,
     ClientesDatailComponent,
-    ClienteDireccionComponent
+    ClienteDireccionComponent,
+    ClienteFormComponent
   ],
   imports: [
     CommonModule,
-    ClientesRoutingModule
+    ClientesRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[
     ClientesService,

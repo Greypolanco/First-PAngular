@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import path from 'path';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientesDatailComponent } from './clientes-datail/clientes-datail.component';
 import { ClienteDireccionComponent } from './cliente-direccion/cliente-direccion.component';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'direcciones/:id',
     component:ClienteDireccionComponent
+  },
+  {
+    path: 'clientes/form',
+    component: ClienteFormComponent
   },
 ];
 
