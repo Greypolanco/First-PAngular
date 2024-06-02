@@ -1,0 +1,105 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card col-md-8">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Registro de clientes</h3>
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input
+              formControlName="name"
+              type="text"
+              name="name"
+              class="form-control"
+              aria-describedby="helpidName"
+            />
+            <small id="helpidName" class="text-muted">{{getError('name','nombre')}}</small>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input
+              formControlName="lastName"
+              type="text"
+              name="lastName"
+              class="form-control"
+              aria-describedby="helpidLastName"
+            />
+            <small id="helpidLastName" class="text-muted">{{getError('lastName','apellido')}}</small>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cedula" class="form-label">Cedula</label>
+            <input
+              formControlName="cedula"
+              type="text"
+              name="cedula"
+              class="form-control"
+              aria-describedby="helpidCedula"
+            />
+            <small id="helpidCedula" class="text-muted">{{getError('cedula','cedula')}}</small>
+          </div>
+          
+          <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">Correo</label>
+            <input
+              formControlName="email"
+              type="email"
+              name="email"
+              class="form-control"
+              aria-describedby="helpidEmail"
+            />
+            <small id="helpidEmail" class="text-muted">{{getError('email','correo')}}</small>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="birthDate" class="form-label">Fecha de nacimiento</label>
+            <input
+              formControlName="birthDate"
+              type="date"
+              name="birthDate"
+              class="form-control form-control-sm"
+              aria-describedby="helpidBirthDate"
+            />
+            <small id="helpidBirthDate" class="text-muted">{{getError('birthDate','fecha de nacimiento')}}</small>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="createAt" class="form-label">Fecha de creación</label>
+            <input
+              formControlName="createAt"
+              type="date"
+              name="createAt"
+              class="form-control form-control-sm"
+              aria-describedby="helpidCreateAt"
+            />
+            <small id="helpidCreateAt" class="text-muted">{{getError('createAt','fecha de creación')}}</small>
+          </div>
+        </div>
+        
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input
+              formControlName="active"
+              type="checkbox"
+              name="active"
+              class="form-check-input"
+              aria-describedby="helpidActive"
+            />
+            <label for="active" class="form-check-label">Activo</label>
+            <small id="helpidActive" class="text-muted">{{getError('active','activo')}}</small>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center mb-3">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
