@@ -1,0 +1,131 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card col-md-8">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Registro de Direcciones</h3>
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="alias" class="form-label">Alias</label>
+            <input
+              formControlName="alias"
+              type="text"
+              name="alias"
+              class="form-control"
+              aria-describedby="helpidAlias"
+            />
+            <small id="helpidName" class="text-danger">{{getError('alias','alias')}}</small>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="street" class="form-label">Calle</label>
+            <input
+              formControlName="street"
+              type="text"
+              name="street"
+              class="form-control"
+              aria-describedby="helpidStreet"
+            />
+            <small id="helpidStreet" class="text-danger">{{getError('street','calle')}}</small>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="city" class="form-label">Ciudad</label>
+            <input
+              formControlName="city"
+              type="text"
+              name="city"
+              class="form-control"
+              aria-describedby="helpidCity"
+            />
+            <small id="helpidCity" class="text-danger">{{getError('city','ciudad')}}</small>
+          </div>
+          
+          <div class="col-md-6 mb-3">
+            <label for="state" class="form-label">Estado</label>
+            <input
+              formControlName="state"
+              type="text"
+              name="state"
+              class="form-control"
+              aria-describedby="helpidState"
+            />
+            <small id="helpidState" class="text-danger">{{getError('state','estado')}}</small>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="zipCode" class="form-label">Codigo Postal</label>
+            <input
+              formControlName="zipCode"
+              type="date"
+              name="zipCode"
+              class="form-control form-control-sm"
+              aria-describedby="helpidZipCode"
+            />
+            <small id="helpidzipCode" class="text-danger">{{getError('zipCode','codigo postal')}}</small>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="country" class="form-label">Ciudad</label>
+            <input
+              formControlName="country"
+              type="country"
+              name="country"
+              class="form-control form-control-sm"
+              aria-describedby="helpidCountry"
+            />
+            <small id="helpidCountry" class="text-danger">{{getError('country','ciudad')}}</small>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="createAt" class="form-label">Fecha de creación</label>
+            <input
+              formControlName="createAt"
+              type="date"
+              name="createAt"
+              class="form-control form-control-sm"
+              aria-describedby="helpidCreateAt"
+            />
+            <small id="helpidCreateAt" class="text-danger">{{getError('createAt','fecha de creación')}}</small>
+          </div>
+  
+          <div class="col-md-6 mb-3">
+            <label for="clienteId" class="form-label">Cliente</label>
+            <input
+              formControlName="clienteId"
+              type="number"
+              name="clienteId"
+              class="form-control form-control-sm"
+              aria-describedby="helpidclienteId"
+            />
+            <small id="helpidclienteId" class="text-danger">{{getError('clienteId','Cliente')}}</small>
+          </div>         
+        </div>
+        
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input
+              formControlName="active"
+              type="checkbox"
+              name="active"
+              class="form-check-input"
+              aria-describedby="helpidActive"
+            />
+            <label for="active" class="form-check-label">Activo</label>
+            <small id="helpidActive" class="text-danger">{{getError('active','activo')}}</small>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center mb-3">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
