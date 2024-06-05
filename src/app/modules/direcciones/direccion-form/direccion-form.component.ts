@@ -9,7 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DireccionFormComponent {
   formulario : FormGroup;
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder){}
+
+  ngOnInit(){
     this.formulario = this.fb.group({
       alias:['',Validators.required],
       street:['',Validators.required],

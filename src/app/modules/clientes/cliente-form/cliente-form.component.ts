@@ -11,7 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ClienteFormComponent {
   formulario: FormGroup;
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder){}
+
+  ngOnInit(){
     this.formulario = this.fb.group({
       name:['',Validators.required],
       lastName:['',Validators.required],
