@@ -3,6 +3,19 @@
     <div class="card-body">
       <h3 class="card-title text-center mb-4">Registro de Direcciones</h3>
       <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="col-md-6 mb-3">
+          <label for="clienteId" class="form-label">Cliente</label>
+          <select
+            formControlName="clienteId"
+            type="number"
+            name="clienteId"
+            class="form-control form-control-sm"
+            aria-describedby="helpidclienteId">
+            <option *ngFor="let cliente of clientes" [value]="cliente.clienteId">{{cliente.name}}</option>
+          </select>
+          <small id="helpidclienteId" class="text-danger">{{getError('clienteId','Cliente')}}</small>
+        </div> 
+
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="alias" class="form-label">Alias</label>
@@ -90,19 +103,7 @@
               aria-describedby="helpidCreateAt"
             />
             <small id="helpidCreateAt" class="text-danger">{{getError('createAt','fecha de creación')}}</small>
-          </div>
-  
-          <div class="col-md-6 mb-3">
-            <label for="clienteId" class="form-label">Cliente</label>
-            <input
-              formControlName="clienteId"
-              type="number"
-              name="clienteId"
-              class="form-control form-control-sm"
-              aria-describedby="helpidclienteId"
-            />
-            <small id="helpidclienteId" class="text-danger">{{getError('clienteId','Cliente')}}</small>
-          </div>         
+          </div>  
         </div>
         
 

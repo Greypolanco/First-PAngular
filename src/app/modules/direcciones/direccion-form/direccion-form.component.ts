@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { error } from 'node:console';
+import { Cliente } from '../../../models/cliente';
+import { ClientesService } from '../../../servicios/clientes.service';
 
 @Component({
   selector: 'app-direccion-form',
@@ -8,8 +11,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class DireccionFormComponent {
   formulario : FormGroup;
+  clientes: Cliente[];
 
-  constructor(private fb: FormBuilder){}
+  constructor(
+    private fb: FormBuilder,
+  private _clientesService: ClientesService){}
 
   ngOnInit(){
     this.formulario = this.fb.group({
@@ -22,14 +28,27 @@ export class DireccionFormComponent {
       createAt:['',Validators.required],
       active:['',Validators.required],
       clienteId:[0,Validators.required],
-    })
-  }
+    });
 
+    this.getClientes();
+  }
+  
   onSubmit(){
     this.formulario.markAllAsTouched()
 
     console.info('valor del formulario',this.formulario.value)
     console.info('validez del formulario',this.formulario.valid)
+  }
+
+  getClientes(){
+    this._clientesService.getClientes().subscribe({
+      next: (value) =>{
+        this.clientes = value
+      },
+      error: (error) =>{
+        console.error(error);
+      }
+    })
   }
 
   public getError(controlName: string, name: string){
