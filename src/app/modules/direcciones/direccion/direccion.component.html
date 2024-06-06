@@ -12,10 +12,11 @@
       <th>Cliente</th>
       <th>Acciones</th>
       <th>Localizar</th>
+      <th>Editar</th>
     </tr>
   </thead>
-  <tbody *ngIf="listaDireccion | async as direcciones">
-    <tr *ngFor="let direccion of direcciones">
+  <tbody *ngIf="listaDireccion ">
+    <tr *ngFor="let direccion of listaDireccion">
       <td>{{direccion.addressId}}</td>
       <td>{{direccion.alias}}</td>
       <td>{{direccion.street}}</td>
@@ -38,9 +39,12 @@
       </td>
       <td>
         <a class="btn btn-primary" 
-        [routerLink]="['/direccion', direccion.addressId]"
+        [routerLink]="['/direcciones/direccion', direccion.addressId]"
         routerLinkActive="router-link-active">Ver</a>
       </td>
+      <td>
+        <a class="btn btn-info" [routerLink]="['./redirect/formulario', direccion.addressId]" routerLinkActive="router-link-active">Editar</a>
+    </td>
     </tr>
   </tbody>
 </table>
