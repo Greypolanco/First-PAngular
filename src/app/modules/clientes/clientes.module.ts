@@ -6,9 +6,10 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { ClientesDatailComponent } from './clientes-datail/clientes-datail.component';
 import { ClienteDireccionComponent } from './cliente-direccion/cliente-direccion.component';
 import { ClientesService } from '../../servicios/clientes.service';
-import { DireccionesService } from '../../servicios/direcciones.service';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -21,11 +22,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ClientesRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers:[
-    ClientesService,
-    DireccionesService
+    ClientesService
   ]
 })
 export class ClientesModule { }
