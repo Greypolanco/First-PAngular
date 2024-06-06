@@ -12,7 +12,7 @@ import { ClientesService } from '../../../servicios/clientes.service';
 })
 export class ClientesDatailComponent {
 
-  cliente: Observable<Cliente>;
+  cliente: Cliente;
 
   constructor(private routerManager : ActivatedRoute,
     private _servicio: ClientesService
@@ -21,7 +21,14 @@ export class ClientesDatailComponent {
   ngOnInit(){
     this.routerManager.params.subscribe(params =>{
       if(params['id']){
-        this.cliente = this._servicio.getClienteById(+params['id']);
+        this._servicio.getClienteById(+params['id']).subscribe({
+          next: (value) => {
+            this.cliente = (value);
+          },
+          error: (error) => {
+            console.log('Error al obtener el cliente', error);
+          },
+        });
       }
     })
   }

@@ -5,7 +5,7 @@
         <h1>Bienvenido </h1>
       </tr>
   </thead>
-  <tbody *ngIf="cliente | async as cliente">
+  <tbody>
     <tr>
       <td><a>Nombre: </a>{{cliente.name}}</td>
     </tr>
@@ -22,6 +22,7 @@
       <td><a>Correo: </a>{{cliente.email}}</td>
     </tr>
   </tbody>
+  
 </table>
 
 <app-cliente-direccion></app-cliente-direccion>
