@@ -9,6 +9,7 @@ import { ClientesService } from '../../servicios/clientes.service';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DireccionesService } from '../../servicios/direcciones.service';
 
 
 
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers:[
-    ClientesService
+    ClientesService,
+    DireccionesService
   ]
 })
 export class ClientesModule { }
