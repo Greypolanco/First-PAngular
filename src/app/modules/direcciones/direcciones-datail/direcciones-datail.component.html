@@ -4,7 +4,7 @@
       <th>Detalles de la dirección</th>
     </tr>
   </thead>
-  <tbody *ngIf="direccion | async as direccion" >
+  <tbody *ngIf="direccion" >
     <tr>
       <td><a>Alias: </a>{{direccion.alias}}</td>
     </tr>
