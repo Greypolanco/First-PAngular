@@ -11,14 +11,21 @@ import { DireccionesService } from '../../../servicios/direcciones.service';
   styleUrl: './direccion.component.css'
 })
 export class DireccionComponent {
-  listaDireccion: Observable<Direccion[]>
+  listaDireccion: Direccion[];
 
   constructor(
     private _servicio: DireccionesService
   ){}
 
   ngOnInit(){
-    this.listaDireccion = this._servicio.getDireccion();
+    this._servicio.getDireccion().subscribe({
+      next: (value) => {
+        this.listaDireccion = value
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
   }
 
 }
