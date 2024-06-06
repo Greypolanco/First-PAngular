@@ -5,7 +5,7 @@
         <h1>Bienvenido </h1>
       </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="cliente">
     <tr>
       <td><a>Nombre: </a>{{cliente.name}}</td>
     </tr>
