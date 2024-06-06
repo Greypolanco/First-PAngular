@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'redirect/formulario',
     component: DireccionFormComponent
   },
+  {
+    path: 'redirect/formulario/:id',
+    component: DireccionFormComponent
+  },
 ];
 
 @NgModule({
