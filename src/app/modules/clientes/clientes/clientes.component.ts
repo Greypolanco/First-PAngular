@@ -4,6 +4,7 @@ import { Cliente } from '../../../models/cliente';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ClientesService } from '../../../servicios/clientes.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-clientes',
@@ -12,13 +13,20 @@ import { ClientesService } from '../../../servicios/clientes.service';
   styleUrl: './clientes.component.css'
 })
 export class ClientesComponent {
-  listaCliente: Observable<Cliente[]>
+  listaCliente: Cliente[];
 
   constructor(
     private _servicio: ClientesService
   ){}
 
   ngOnInit() {
-    this.listaCliente = this._servicio.getClientes();
+    this._servicio.getClientes().subscribe({
+      next: (value) => {
+        this.listaCliente = value
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
   }
 }
